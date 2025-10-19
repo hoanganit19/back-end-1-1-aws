@@ -20,6 +20,11 @@ export class UsersController {
     return this.usersService.create(body);
   }
 
+  @Get('something')
+  something() {
+    return 'ahihi';
+  }
+
   @Post('upload')
   upload() {
     fs.writeFileSync(
