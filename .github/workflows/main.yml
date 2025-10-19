@@ -24,6 +24,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            cd /home/backend_nestjs
             git pull origin main
             docker compose down
             docker compose build
