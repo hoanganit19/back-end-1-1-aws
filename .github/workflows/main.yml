@@ -17,10 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to VPS
-        uses: actions/checkout@v3
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          ssh-key: ${{ secrets.KEY }}
-          run: |
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          port: 22
+          script: |
             cd /home/backend_nestjs
             git pull origin main
             docker compose down
