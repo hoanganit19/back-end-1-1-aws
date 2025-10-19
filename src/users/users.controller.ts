@@ -12,7 +12,7 @@ export class UsersController {
 
   @Get('something')
   something() {
-    return 'ahihi 2';
+    return 'ahihi 3';
   }
 
   @Get(':id')
