@@ -20,9 +20,9 @@ jobs:
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.HOST }}
-          username: ubuntu
+          username: ${{secrets.USER}}
           key: ${{ secrets.KEY }}
-          port: 22
+          port: ${{secrets.PORT}}
           script: |
             git config --global --add safe.directory /home/backend_nestjs
             cd /home/backend_nestjs
