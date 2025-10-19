@@ -10,6 +10,11 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @Get('something')
+  something() {
+    return 'ahihi';
+  }
+
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.usersService.findOne(id);
@@ -18,11 +23,6 @@ export class UsersController {
   @Post()
   create(@Body() body: any) {
     return this.usersService.create(body);
-  }
-
-  @Get('something')
-  something() {
-    return 'ahihi';
   }
 
   @Post('upload')
